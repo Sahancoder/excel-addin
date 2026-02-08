@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>McLarens TRANSFORMIQ - Business Transformation Bot</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <link rel="stylesheet" href="./taskpane.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo">
+            <img src="assets/blue-75-years-logo.svg" alt="McLarens" />
+          </div>
+          <div class="btxt">
+            <h1 id="appName">McLarens TRANSFORMIQ</h1>
+            <p>Business Transformation Bot</p>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="dot" title="Online"></div>
+          <select id="model">
+            <option>Gemini</option>
+            <option>GPT</option>
+            <option>Claude</option>
+          </select>
+          <button class="iconbtn" id="settings" title="Settings">⚙️</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="card">
+          <div class="title">Ask the bot</div>
+          <textarea
+            id="prompt"
+            placeholder="E.g., Clean this sheet, remove duplicates, detect missing invoices, generate a summary report..."
+          ></textarea>
+          <div class="btnrow" style="margin-top: 10px;">
+            <button class="primary" id="run">Run</button>
+            <button class="ghost" id="clear">Clear</button>
+          </div>
+          <div class="status" id="status">Ready.</div>
+        </div>
+
+        <div class="card">
+          <div class="title">Quick actions</div>
+
+          <div class="action">
+            <div class="badge">🧹</div>
+            <div>
+              <h2>Clean &amp; Validate</h2>
+              <p>Fix blanks, types, duplicates, and standardize data for reporting.</p>
+              <div class="btnrow">
+                <button class="primary" data-action="clean">Smart Clean</button>
+                <button class="ghost" data-action="validate">Validate Only</button>
+              </div>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <div class="action">
+            <div class="badge">📄</div>
+            <div>
+              <h2>Import Invoice</h2>
+              <p>Upload invoice PDF/image - extract fields - insert into an Excel table.</p>
+              <div class="btnrow">
+                <button class="primary" data-action="import">Upload &amp; Extract</button>
+                <button class="ghost" data-action="map">Map Columns</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="title">Tools</div>
+
+          <div class="tool">
+            <div class="tleft">
+              <div class="ticon">📊</div>
+              <div class="tmeta">
+                <strong>Summary Report</strong>
+                <span>Totals, counts, top vendors</span>
+              </div>
+            </div>
+            <button class="linkbtn" data-action="summary">Open</button>
+          </div>
+
+          <div class="tool">
+            <div class="tleft">
+              <div class="ticon">📋</div>
+              <div class="tmeta">
+                <strong>Create Tables</strong>
+                <span>Invoices, items, logs</span>
+              </div>
+            </div>
+            <button class="linkbtn" data-action="tables">Open</button>
+          </div>
+
+          <div class="tool">
+            <div class="tleft">
+              <div class="ticon">fx</div>
+              <div class="tmeta">
+                <strong>Formula Helper</strong>
+                <span>Build Excel formulas with AI</span>
+              </div>
+            </div>
+            <button class="linkbtn" data-action="formula">Open</button>
+          </div>
+
+          <div class="tool">
+            <div class="tleft">
+              <div class="ticon">🕒</div>
+              <div class="tmeta">
+                <strong>Logs</strong>
+                <span>What ran, when, and results</span>
+              </div>
+            </div>
+            <button class="linkbtn" data-action="logs">Open</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
